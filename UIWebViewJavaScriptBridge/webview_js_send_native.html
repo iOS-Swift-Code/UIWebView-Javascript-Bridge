@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+
+        function receiveEventFromSwift () {
+            $('p').text('We got a message from swift');
+            document.getElementsByTagName("p")[0].style.color = "blue";
+            alert("We got it!");
+            return "This is the result return from JS";
+        }
+
+        $(document).ready(function () {
+            $('.sendData').click(function () {
+                //scheme name must be lowercase and no any symbol
+                window.location = "customscheme://host_name?data_from_javaScript"
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <dir class="container">
+        <h1>Hello world</h1>
+        <p>Default Sample Text</p>
+        <button class="sendData">Send Data To Native Swift</button>
+    </dir>
+
+</body>
+
+</html>
