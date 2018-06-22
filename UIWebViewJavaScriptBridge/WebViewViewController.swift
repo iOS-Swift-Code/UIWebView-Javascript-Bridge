@@ -12,12 +12,9 @@ import UIKit
 
 class WebViewViewController: UIViewController {
     
-    
     // Outlet
     @IBOutlet weak var locationWebView: UIWebView!
     @IBOutlet weak var locationLabel: UILabel!
-    
-    var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +27,6 @@ class WebViewViewController: UIViewController {
     }
     
     @IBAction func callJSAction(_ sender: UIButton) {
-        
         if let result = locationWebView.stringByEvaluatingJavaScript(from: "receiveEventFromSwift()") {
             locationLabel.text = result
             print("result \(result)")
